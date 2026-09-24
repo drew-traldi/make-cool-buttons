@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make Cool Buttons — CSS Button Generator</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drew-traldi.github.io/make-cool-buttons/">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Drew Traldi">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%94%98%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Design a beautiful CSS button in seconds: soft, 3D, glossy, neon, gradient or outline. Pick your colors, then copy or download the code. Free.">
+<meta property="og:title" content="Make Cool Buttons"><meta property="og:description" content="Design a CSS button, pick your colors, copy the code. Free, no sign-up.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style id="page">
+:root{--base:#e0e5ec;--dk:#a3b1c6;--lt:#ffffff;--txt:#4a5670}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--base);color:var(--txt);font-family:'Nunito',system-ui,sans-serif;padding:30px 18px}
+h1{text-align:center;font-weight:900;font-size:clamp(34px,6vw,54px);color:var(--txt);text-shadow:4px 4px 8px var(--dk),-4px -4px 8px var(--lt);letter-spacing:1px}
+.sub{text-align:center;margin-bottom:30px;opacity:.8}
+.grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}
+.stage{border-radius:30px;min-height:340px;display:grid;place-items:center;padding:30px;box-shadow:inset 8px 8px 16px var(--dk),inset -8px -8px 16px var(--lt);transition:background .3s;position:relative}
+.stage .bgp{position:absolute;right:16px;bottom:14px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;background:rgba(255,255,255,.75);padding:6px 10px;border-radius:12px;color:#4a5670}
+.panel{border-radius:30px;padding:24px;box-shadow:12px 12px 24px var(--dk),-12px -12px 24px var(--lt)}
+.lbl{font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 10px}
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.nb{border:0;background:var(--base);border-radius:14px;padding:11px 4px;cursor:pointer;font:700 13px 'Nunito';color:var(--txt);box-shadow:4px 4px 8px var(--dk),-4px -4px 8px var(--lt)}
+.nb.on{box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt);color:#2d6cdf}
+.row{display:flex;gap:14px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.row>label{flex:1;min-width:120px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:10px}
+input[type=color]{width:46px;height:38px;border:0;border-radius:12px;background:none;cursor:pointer;padding:0}
+input[type=text]{flex:1;border:0;border-radius:14px;padding:12px 14px;font:700 15px 'Nunito';color:var(--txt);background:var(--base);box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt);outline:none;min-width:0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin:-6px 0 16px}
+.sw i{width:24px;height:24px;border-radius:50%;cursor:pointer;box-shadow:2px 2px 4px var(--dk),-2px -2px 4px var(--lt)}
+.f{margin-bottom:14px}
+.f label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:8px}
+input[type=range]{-webkit-appearance:none;width:100%;height:12px;border-radius:10px;background:var(--base);box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--base);box-shadow:3px 3px 6px var(--dk),-3px -3px 6px var(--lt);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--base);border:0;box-shadow:3px 3px 6px var(--dk),-3px -3px 6px var(--lt)}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.acts .nb{padding:13px 4px;font-weight:900}
+.acts .nb.pri{background:#2d6cdf;color:#fff;box-shadow:4px 4px 10px var(--dk),-4px -4px 8px var(--lt)}
+.code{max-width:1100px;margin:34px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.code .box{border-radius:24px;padding:18px;box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt);min-width:0}
+pre{font:12.5px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto}
+.lib{display:flex;gap:14px;flex-wrap:wrap;align-items:center;min-height:60px}
+.lib .it{position:relative;padding:10px;border-radius:16px;cursor:pointer;box-shadow:4px 4px 8px var(--dk),-4px -4px 8px var(--lt)}
+.lib .it .x{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;border:0;background:#e5484d;color:#fff;font-size:12px;cursor:pointer;display:none}
+.lib .it:hover .x{display:block}
+.lib .it div{pointer-events:none}
+.empty{opacity:.6;font-size:14px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,90px);background:#2d6cdf;color:#fff;padding:10px 18px;border-radius:14px;font-weight:900;transition:.3s;z-index:9}
+.toast.s{transform:translate(-50%,0)}
+@media(max-width:860px){.grid,.code{grid-template-columns:1fr}}
+</style><style id="live"></style></head><body>
+<h1>make cool buttons.</h1><div class="sub">Pick a style, choose your colors, and copy the code. Hover and click the preview to test it.</div>
+<div class="grid">
+ <div class="stage" id="stage"><button class="cool-btn" id="btn" type="button">Get started</button><div class="bgp">Preview background <input type="color" id="bg" value="#e0e5ec"></div></div>
+ <div class="panel">
+  <div class="lbl">Style</div>
+  <div class="styles" id="styles"><button class="nb on" data-s="soft">Soft</button><button class="nb" data-s="push">3D Push</button><button class="nb" data-s="glossy">Glossy</button><button class="nb" data-s="neon">Neon</button><button class="nb" data-s="gradient">Gradient</button><button class="nb" data-s="outline">Outline</button></div>
+  <div class="row"><input type="text" id="label" value="Get started" maxlength="40" aria-label="Button text"></div>
+  <div class="row"><label>Button color <input type="color" id="col" value="#e0e5ec"></label><label>Text color <input type="color" id="tcol" value="#4a5670"><input type="checkbox" id="auto" checked title="Auto contrast"> auto</label></div>
+  <div class="sw" id="sw"></div>
+  <div class="f"><label>Size <span id="vs"></span></label><input type="range" id="size" min="12" max="28" value="17"></div>
+  <div class="f"><label>Roundness <span id="vr"></span></label><input type="range" id="rad" min="0" max="40" value="16"></div>
+  <div class="f" id="depthF"><label>Depth <span id="vd"></span></label><input type="range" id="depth" min="1" max="20" value="8"></div>
+  <div class="acts"><button class="nb pri" id="copy">Copy code</button><button class="nb" id="dl">Download</button><button class="nb" id="save">★ Save</button></div>
+ </div>
+</div>
+<div class="code">
+ <div><div class="lbl">Your code (HTML + CSS)</div><div class="box"><pre id="code"></pre></div></div>
+ <div><div class="lbl">My saved buttons (stored on this device)</div><div class="box"><div class="lib" id="lib"></div></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const DEF={soft:['#e0e5ec','#e0e5ec'],push:['#ff5c5c','#fff4e6'],glossy:['#2d6cdf','#eef3fb'],neon:['#00f0ff','#0d0d16'],gradient:['#7b5cff','#f4f1ff'],outline:['#1f7a5a','#f3f7f5']};
+const SW=['#e0e5ec','#ff5c5c','#ff9f1c','#ffd23f','#2ec27e','#00f0ff','#2d6cdf','#7b5cff','#ff4fa3','#1d1d1f'];
+let style='soft';
+const hx=h=>h.slice(1).match(/../g).map(x=>parseInt(x,16));
+const toHex=a=>'#'+a.map(v=>Math.round(Math.max(0,Math.min(255,v))).toString(16).padStart(2,'0')).join('');
+const shade=(h,a)=>toHex(hx(h).map(v=>v+a*255));
+const mix=(h,k)=>toHex(hx(h).map(v=>v+(k>0?(255-v)*k:v*k)));
+const rgba=(h,a)=>`rgba(${hx(h).join(',')},${a})`;
+const lum=h=>{const[r,g,b]=hx(h).map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*r+.7152*g+.0722*b};
+function hue(h,deg){let[r,g,b]=hx(h).map(v=>v/255);const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let H=0,S=0,L=(mx+mn)/2;if(mx!==mn){const d=mx-mn;S=L>.5?d/(2-mx-mn):d/(mx+mn);H=mx===r?(g-b)/d+(g<b?6:0):mx===g?(b-r)/d+2:(r-g)/d+4;H*=60}H=(H+deg)%360;
+ const k=n=>(n+H/30)%12,a=S*Math.min(L,1-L),f=n=>L-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));return toHex([f(0),f(8),f(4)].map(v=>v*255))}
+function css(){const c=$('col').value,fs=+$('size').value,r=+$('rad').value,d=+$('depth').value;
+ const t=$('auto').checked?(style==='neon'||style==='outline'?c:lum(c)>.45?'#1d1d1f':'#ffffff'):$('tcol').value;if($('auto').checked)$('tcol').value=t;
+ const base=`.cool-btn {
+  font: 700 ${fs}px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: ${Math.round(fs*.9)}px ${Math.round(fs*1.8)}px;
+  border-radius: ${r}px;
+  color: ${t};
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease, color .2s ease, filter .2s ease;
+`;
+ const S={
+ soft:`  background: ${c};
+  border: 0;
+  box-shadow: ${d}px ${d}px ${d*2}px ${shade(c,-.16)}, -${d}px -${d}px ${d*2}px ${shade(c,.12)};
+}
+.cool-btn:hover { transform: translateY(-1px); }
+.cool-btn:active {
+  transform: translateY(1px);
+  box-shadow: inset ${Math.ceil(d/2)}px ${Math.ceil(d/2)}px ${d}px ${shade(c,-.16)}, inset -${Math.ceil(d/2)}px -${Math.ceil(d/2)}px ${d}px ${shade(c,.12)};
+}`,
+ push:`  background: ${c};
+  border: 0;
+  box-shadow: 0 ${d}px 0 ${mix(c,-.35)}, 0 ${d+6}px ${d+10}px ${rgba(c,.35)};
+}
+.cool-btn:hover { transform: translateY(-2px); box-shadow: 0 ${d+2}px 0 ${mix(c,-.35)}, 0 ${d+10}px ${d+14}px ${rgba(c,.4)}; }
+.cool-btn:active { transform: translateY(${d}px); box-shadow: 0 0 0 ${mix(c,-.35)}, 0 2px 6px ${rgba(c,.3)}; }`,
+ glossy:`  background: linear-gradient(180deg, ${mix(c,.35)} 0%, ${c} 49%, ${mix(c,-.12)} 51%, ${mix(c,.08)} 100%);
+  border: 1px solid ${mix(c,-.3)};
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 ${Math.ceil(d/2)}px ${d*2}px ${rgba(c,.45)};
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+.cool-btn:hover { filter: brightness(1.08); }
+.cool-btn:active { transform: translateY(1px); box-shadow: inset 0 2px 6px rgba(0,0,0,.25); }`,
+ neon:`  background: transparent;
+  border: 2px solid ${c};
+  box-shadow: 0 0 ${d}px ${c}, inset 0 0 ${d}px ${rgba(c,.6)};
+  text-shadow: 0 0 ${Math.ceil(d/2)}px ${c};
+}
+.cool-btn:hover { background: ${c}; color: ${lum(c)>.45?'#0d0d16':'#ffffff'}; box-shadow: 0 0 ${d*3}px ${c}, 0 0 ${d*6}px ${rgba(c,.5)}; text-shadow: none; }
+.cool-btn:active { transform: scale(.97); }`,
+ gradient:`  background: linear-gradient(135deg, ${c}, ${hue(c,45)});
+  border: 0;
+  box-shadow: 0 ${d}px ${d*2.5}px ${rgba(c,.45)};
+}
+.cool-btn:hover { transform: translateY(-2px); filter: brightness(1.08) saturate(1.1); box-shadow: 0 ${d+4}px ${d*3}px ${rgba(c,.5)}; }
+.cool-btn:active { transform: translateY(1px); box-shadow: 0 ${Math.ceil(d/2)}px ${d}px ${rgba(c,.4)}; }`,
+ outline:`  background: transparent;
+  border: 2px solid ${c};
+}
+.cool-btn:hover { background: ${c}; color: ${lum(c)>.45?'#1d1d1f':'#ffffff'}; }
+.cool-btn:active { transform: scale(.97); }`};
+ return base+S[style]}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function html(){return`<button class="cool-btn" type="button">${esc($('label').value||'Button')}</button>`}
+function full(){return html()+'\n\n<style>\n'+css()+'\n</style>'}
+function render(){const c=css();$('live').textContent=c;$('btn').textContent=$('label').value||'Button';$('stage').style.background=$('bg').value;
+ $('code').textContent=full();$('vs').textContent=$('size').value+'px';$('vr').textContent=$('rad').value+'px';$('vd').textContent=$('depth').value;$('tcol').disabled=$('auto').checked}
+function setStyle(s,resetColors){style=s;$('styles').querySelectorAll('.nb').forEach(b=>b.classList.toggle('on',b.dataset.s===s));if(resetColors){$('col').value=DEF[s][0];$('bg').value=DEF[s][1]}render()}
+$('styles').querySelectorAll('.nb').forEach(b=>b.onclick=()=>setStyle(b.dataset.s,true));
+$('sw').innerHTML=SW.map(c=>`<i style="background:${c}" data-c="${c}" title="${c}"></i>`).join('');
+$('sw').querySelectorAll('i').forEach(i=>i.onclick=()=>{$('col').value=i.dataset.c;if(style==='soft')$('bg').value=i.dataset.c;render()});
+$('col').oninput=()=>{if(style==='soft')$('bg').value=$('col').value;render()};
+['label','size','rad','depth','bg','tcol'].forEach(k=>$(k).oninput=render);$('auto').onchange=render;
+function toast(t){$('toast').textContent=t;$('toast').classList.add('s');setTimeout(()=>$('toast').classList.remove('s'),1300)}
+$('copy').onclick=()=>{navigator.clipboard.writeText(full()).then(()=>toast('Code copied ✓'))};
+$('dl').onclick=()=>{const doc=`<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<title>My cool button</title>\n<style>\nbody { min-height: 100vh; margin: 0; display: grid; place-items: center; background: ${$('bg').value}; }\n${css()}\n</style>\n</head>\n<body>\n${html()}\n</body>\n</html>\n`;
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([doc],{type:'text/html'}));a.download='cool-button.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Downloaded cool-button.html')};
+function state(){return{style,label:$('label').value,col:$('col').value,tcol:$('tcol').value,auto:$('auto').checked,size:$('size').value,rad:$('rad').value,depth:$('depth').value,bg:$('bg').value}}
+function load(s){$('label').value=s.label;$('col').value=s.col;$('tcol').value=s.tcol;$('auto').checked=s.auto;$('size').value=s.size;$('rad').value=s.rad;$('depth').value=s.depth;$('bg').value=s.bg;setStyle(s.style,false)}
+let LIB=[];try{LIB=JSON.parse(localStorage.coolButtons||'[]')}catch(e){}
+function saveLib(){try{localStorage.coolButtons=JSON.stringify(LIB)}catch(e){}}
+function renderLib(){const cur=state();if(!LIB.length){$('lib').innerHTML='<span class="empty">Nothing saved yet. Tap ★ Save to keep a button here.</span>';return}
+ $('lib').innerHTML=LIB.map((s,i)=>{load(s);const c=css().replace(/\.cool-btn/g,'.lib-'+i);return`<div class="it" data-i="${i}" style="background:${s.bg}" title="Load this button"><style>${c}</style><div><button class="lib-${i}" type="button" tabindex="-1">${esc(s.label||'Button')}</button></div><button class="x" data-x="${i}" title="Delete">✕</button></div>`}).join('');
+ load(cur);
+ $('lib').querySelectorAll('.it').forEach(el=>el.onclick=e=>{const x=e.target.closest('.x');if(x){LIB.splice(+x.dataset.x,1);saveLib();renderLib();return}load(LIB[+el.dataset.i]);toast('Loaded ✓');scrollTo({top:0,behavior:'smooth'})})}
+$('save').onclick=()=>{LIB.unshift(state());LIB=LIB.slice(0,24);saveLib();renderLib();toast('Saved to this device ★')};
+setStyle('soft',true);renderLib();
+</script></body></html>
