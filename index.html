@@ -48,6 +48,9 @@ pre{font:12.5px/1.6 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break
 .toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,90px);background:#2d6cdf;color:#fff;padding:10px 18px;border-radius:14px;font-weight:900;transition:.3s;z-index:9}
 .toast.s{transform:translate(-50%,0)}
 @media(max-width:860px){.grid,.code{grid-template-columns:1fr}}
+
+/* mobile: 16px fields stop iOS focus-zoom; roomier touch targets */
+@media (max-width:640px){input:not([type=range]):not([type=checkbox]):not([type=radio]):not([type=color]),select,textarea{font-size:16px!important}}
 </style><style id="live"></style></head><body>
 <h1>make cool buttons.</h1><div class="sub">Pick a style, choose your colors, and copy the code. Hover and click the preview to test it.</div>
 <div class="grid">
